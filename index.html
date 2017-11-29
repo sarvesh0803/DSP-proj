@@ -112,7 +112,7 @@
         <h4>3.4 Windowing</h4>
         <p>After slicing the signal into frames, we apply a window function such as the Hamming window to each frame. A Hamming window has the following form:
         w[n]=0.54−0.46cos(2πnN−1)
-          <img src="hamming_window.jpg" class=image height=100px width=100px>
+          <img src="hamming_window.jpg" class=image height=500px width=400px>
         where, 0≤n≤N−1, N is the window length. Plotting the previous equation yields the following plot:
 
         There are several reasons why we need to apply a window function to the frames, notably to counteract the assumption made by the FFT that the data is infinite and to reduce spectral leakage.</p>
@@ -128,10 +128,10 @@
             <li>Mean and variance of the spectral centroid</li>
             <p>This feature describes the center of frequency at which most of the power in the signal (at the time frame examined) is found. Music signals have high frequency noise and percussive sounds that result in a high spectral mean. On the other hand, in speech signals the pitch of the audio signal stays in a more narrow range of low values. As a result, music has a higher spectral centroid than speech. The spectral centroid for a frame occurring at time t is computed as follows:
             where k is an index corresponding to a frequency and X(k) is the power of the signal at the corresponding frequency band.
-            <img src="formula1.png" class=image></p>
+            <img src="formula1.png" class=image height=80px width=100px></p>
             <li>Spectral roll off</li>
             <p>This feature is the value of the frequency that 95% of the power of the signal resides under. As mentioned before, the power in music is concentrated in the higher frequencies; however, speech has a range of low frequency power. The mathematical expression for finding this value of frequency is as follows [65, 109]:
-              <img src="formula2.jpg" class=image>
+              <img src="formula2.jpg" class=image height=80px width=100px>
             where X(k) is the DFT of x(t), the left hand side of the above equation is the sum of the power under the frequency value V, and the right hand side of the equation is 95% of the total signal power of the time frame.
             </p>
           </ul>
