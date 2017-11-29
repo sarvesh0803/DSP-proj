@@ -59,6 +59,15 @@ def fft(signal):
          combined[m + n/2] = Feven[m] - omega(n, -m) * Fodd[m]
 
       return combined
+#Hamming window
+
+def ham_window(signal):
+    new=[]
+
+    for i in xrange(0,len(signal)):
+        new.append(signal[i]*(0.54-(0.46*cmath.cos(float(2*cmath.pi*i/(len(signal)-1))))))
+
+    return new
 
 #----------------------------center frequeny function:------------------------
 
@@ -70,6 +79,33 @@ def center(signal):
 
     center/=n
     return center
+
+
+#------------------------------Framing--------------------------------------
+
+
+
+frame_fft=[]
+frame_abs_output=[]
+roll_off=[]
+
+for i in xrange(0, len(frame_matrix)):
+    frame_fft.append(np.array(fft(frame_matrix[i])))
+
+for i in xrange(0, len(frame_matrix)):
+    frame_abs_output.append(np.array([abs(frame_fft[i][j]) for j in xrange(0, 512)]))
+
+
+
+
+# ------------------------------------------Windowing---------------------------------------
+
+for i in xrange(0, len(frame_fft)):
+    frame_fft[i]=ham_window(frame_fft[i])
+
+
+
+
 
 # ---------------------------------------- Feature Extraction----------------------------------------
 #1. FFT
@@ -86,17 +122,6 @@ power_spectral_density=np.array([abs_output[i]**2 for i in xrange(0, len(abs_out
 
 
 #3. Spectral Centroid
-
-frame_fft=[]
-frame_abs_output=[]
-roll_off=[]
-
-for i in xrange(0, len(frame_matrix)):
-    frame_fft.append(np.array(fft(frame_matrix[i])))
-
-for i in xrange(0, len(frame_matrix)):
-    frame_abs_output.append(np.array([abs(frame_fft[i][j]) for j in xrange(0, 512)]))
-
 
 spectral_centroid=[]
 centroid=0
