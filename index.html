@@ -45,26 +45,20 @@
     <div class="tab-content description">
       <div id="#introduction" class="tab-pane active">
         <h5>Music genre classification has been of interest for a variety of reasons, including management of large music collections. As these collections are becoming more digital, genre classification is essential for creating
-        recommendation systems, that can benefit collective music libraries, social networks, etc.</h5><h5>The term “genre" is a subject to interpretation and it is often the case that genres may be very fuzzy in their definition. While traditionally some genres are classified based on the sound and other related features, there are several music genres, which are widely accepted, which are classified on basis of region, time period, etc. Despite the lack of a standard criteria for defining genres, the classification of music based on genres is one of the broadest and most widely used.</h5><h5>Genre classification, till now, had been done manually by appending it to metadata of audio files or including it in album info. This project however aims at content-based classification, focusing on information within the audio rather than extraneously appended information. The traditional machine learning approach for classification is used - and suitable features of data, train classier on feature data, make predictions.
+        recommendation systems, that can benefit collective music libraries, social networks, etc.</h5><h5>The term “genre" is a subject to interpretation and it is often the case that genres may be very fuzzy in their definition. While traditionally some genres are classified based on the sound and other related features, there are several music genres, which are widely accepted, which are classified on basis of region, time period, etc. Despite the lack of a standard criteria for defining genres, the classification of music based on genres is one of the broadest and most widely used.</h5><h5>Genre classification, till now, had been done manually by appending it to metadata of audio files or including it in album info. Our project however aims at content-based classification, focusing on information within the audio rather than extraneously appended information. The traditional machine learning approach for classification is used - and suitable features of data, train classier on feature data, make predictions.
         </h5><br>
         <h4>1.1 Introduction to Problem</h4>
         <p>In our project, we aim to classify music based on its genre using feature extraction followed by machine learning classifiers. Our main focus is to study and analyse how different categories of audio signals consist of varying information in both the time and the frequency domain and thus exploit them to build features for accurate classification.
-        </p><p>We will be using a standard dataset and extract various features from the given soundtrack. The outcomes of these features are then feeded to various machine learning based classifiers, which are thereafter trained and are used to predict the possible outcomes.
+        </p><p>We will be using a standard dataset to extract various features from the given soundtrack. The outcomes of these features are then feeded to our machine learning based classifier, which is thereafter trained and are used to predict score of the possible outcomes.
         </p>
         <h4>1.2 Literature Review</h4>
-        <p>Music Genre Classification is an interesting and relevant problem that people have tried tackling with their own unique approach. One prominent research which has set a benchmark for this field of research was done by G. Tzanetakis and P. Cook in IEEE Transactions on Audio and Speech Processing 2002.[1]
+        <p>Music Genre Classification is an interesting and relevant problem that people have tried tackling with their own unique approach. One prominent research which has set a benchmark for this field of research was done by G. Tzanetakis and P. Cook in IEEE Transactions on Audio and Speech Processing 2002.It used spectral and also rhythmic features for training classifiers and further prediction.
+        The employed feature set has become of public use, as part of the MARSYAS framework (Music Analysis, Retrieval and SYnthesis for Audio Signals), and it has been widely used for music genre recognition. Other characteristics such as Inter-Onset Interval Histogram Coefficients, Rhythm Patterns and its derivatives Statistical Spectrum Descriptors, and Rhythm Histograms have been proposed in the literature recently. 
 
-        It used spectral and also rhythmic features for training classifiers and further prediction.
-        The employed feature set has become of public use, as part of the MARSYAS framework (Music Analysis, Retrieval and SYnthesis for Audio Signals), and it has been widely used for music genre recognition [3,9,11]. Other characteristics such as Inter-Onset Interval Histogram Coefficients, Rhythm Patterns and its derivatives Statistical Spectrum Descriptors, and Rhythm Histograms have been proposed in the literature recently. 
+        Several basic spectral features are used in common by several papers around the globe.
+        These includes usage of spectrogram to calculate features like Roll-Off point,Spectral Centroid, Kurtosis etc.
 
-        Several basic spectral features are used in common by several papers around the globe.[2].
-        These includes usage of spectrogram to calculate features like Roll-Off, Kurtosis etc.
-
-        Another important feature used is the Mel-Frequency Cepstral Co-Efficients. [3]
-
-
-        Some latest features used for above purposes include usage of Local Binary Pattern features on spectrum. There are also proposals for using Octave based spectral contrast & Normalised Audio Spectral Envelope on MPEG-7.
-
+        Another important feature used is the Mel-Frequency Cepstral Co-Efficients.
         After extracting various features, we are left with using Machine learning classifiers. In addition to traditional K-Means, Spherical clustering and Bag-Of-Words based classification (for spectral analysis[5]), we also witnessed improved rates with usage of Hidden Markov models or a culmination of several traditional models. [6]
         </p>
         <h4>1.3 Figure</h4>
@@ -82,11 +76,11 @@
       <div class="tab-pane active">
         <p>Music Genre Classification is an interesting and relevant problem that people have tried tackling with their own unique approach. Our proposed approach is the following:
         <ul>
-          <li>We first of all proceed with gathering of the dataset. This part was quite easy as we were able to find the standard GTZAN dataset. However we have reduced the size of database to only 4 genres as our prime focus is on feature extraction.</li>
+          <li>We first of all proceed with collection of the dataset. This part was quite easy as we were able to find the standard GTZAN dataset. However we have reduced the size of database to only 4 genres as our prime focus is on feature extraction.</li>
           <li>After the data collection, we proceed towards the segmentation of data and reducing its length since a 30 sec audio is very bulky a signal to be processed.</li>
           <li>After splitting the signal into short-time frames, we have applied the window function to improve the signal to noise ratio and filter out the discrepant frequencies.</li>
-          <li>Next step is to extract the features from the final audio time signal. Detailed procedure is described afterwards.</li>
-          <li>Now we apply the finally produced feature vector into the classifier and the results produced are shown in the experiments section.</li>
+          <li>Next step is to extract the features from the final audio time signal. Detailed procedure is described afterwards in the Methodology section.</li>
+          <li>Now we apply the finally produced feature vector into the classifier and the results produced are shown in the results section.</li>
         </p>
       </div>
     </div>
@@ -97,39 +91,39 @@
 
     <div class="tab-content description">
       <div class="tab-pane active">
-        <h4>3.1 Dataset description</h4>
-        <p>We have used the GTZAN dataset from the MARYSAS website. It contains 10 music genres, each genre has 100 audio clips in .au format. Since our project mainly focuses on the feature extraction part, we have decided to perform the experiment over 4 main genres, ie - blues, classical, jazz, rock, metal. Each audio clips has a length 30 seconds, are 22050 Hz Mono 16-bit files. The dataset incorporates samples from variety of sources like CDs, radios, microphone recordings etc.
+        <h4><b>3.1 Dataset description</b></h4>
+        <p>We have used the GTZAN dataset from the MARYSAS website. It contains 10 music genres, each genre has 100 audio clips in .au format. Since our project mainly focuses on the feature extraction part, we have decided to perform the experiment over 4 main genres, ie - classical, jazz, rock, metal. Each audio clip is 30 seconds long, 22050 Hz Mono 16-bit file. The dataset incorporates samples from variety of sources like CDs, radios, microphone recordings etc.
         </p>
-        <h4>3.2 Preprocessing</h4>
+        <h4><b>3.2 Preprocessing</b></h4>
         <p>The preprocessing part involved converting the audio from .au format to .wav format to make it compatible to python's wavread module for reading audio files.
         The free and open source software FFmpeg was used to achieve this conversion.
         The next step was segmenting the audio files into smaller frames to reduce computation time and power.
         </p>
-        <h4>3.3 Framing</h4>
+        <h4><b>3.3 Framing</b></h4>
         <p>After reading the audio wav files, we need to split the signal into short-time frames. The rationale behind this step is that frequencies in a signal change over time, so in most cases it doesn’t make sense to do the Fourier transform across the entire signal in that we would loose the frequency contours of the signal over time. To avoid that, we can safely assume that frequencies in a signal are stationary over a very short period of time. Therefore, by doing a Fourier transform over this short-time frame, we can obtain a good approximation of the frequency contours of the signal by concatenating adjacent frames.
         Typical frame sizes in speech processing range from 20 ms to 40 ms with 50% (+/-10%) overlap between consecutive frames. The settings we used are 25 ms for the frame size, frame_size = 0.025 and a 10 ms overlap.
         </p>
-        <h4>3.4 Windowing</h4>
+        <h4><b>3.4 Windowing</b></h4>
         <p>After slicing the signal into frames, we apply a window function such as the Hamming window to each frame. A Hamming window has the following form:
         w[n]=0.54−0.46cos(2πnN−1)
           <img src="hamming_window.jpg" class=image height=500px width=600px>
         where, 0≤n≤N−1, N is the window length. Plotting the previous equation yields the following plot:
 
         There are several reasons why we need to apply a window function to the frames, notably to counteract the assumption made by the FFT that the data is infinite and to reduce spectral leakage.</p>
-        <h4>3.5 Extraction of features</h4>
+        <h4><b>3.5 Extraction of features</b></h4>
         <p>
           <ul class="features">
-            <li>Fourier transform and power spectrum</li>
+            <li><i>Fourier transform and power spectrum</i></li>
             <p>We can now do an N-point FFT on each frame to calculate the frequency spectrum, which is also called Short-Time Fourier-Transform (STFT), where N is typically 256 or 512, NFFT = 512; and then compute the power spectrum (periodogram) using the following equation:
               P=|FFT(xi)|<sup>2</sup>/N where, xi is the ith frame of signal x.</p>
-            <li>Spectral centroid</li>
+            <li><i>Spectral centroid</i></li>
             <p>It describes where the "centre of mass" for sound is. It essentially is the weighted mean of the frequencies present in the sound. Consider two songs, one from blues and one from metal. A blues song is generally consistent throughout it length while a metal song usually has more frequencies accumulated towards the end part. So spectral centroid for blues song will lie somewhere near the middle of its spectrum while that for a metal song would usually be towards its end.
             </p>
-            <li>Mean and variance of the spectral centroid</li>
+            <li><i>Mean and variance of the spectral centroid</i></li>
             <p>This feature describes the center of frequency at which most of the power in the signal (at the time frame examined) is found. Music signals have high frequency noise and percussive sounds that result in a high spectral mean. On the other hand, in speech signals the pitch of the audio signal stays in a more narrow range of low values. As a result, music has a higher spectral centroid than speech. The spectral centroid for a frame occurring at time t is computed as follows:
             where k is an index corresponding to a frequency and X(k) is the power of the signal at the corresponding frequency band.
             <img src="formula1.png" class=image height=120px width=130px></p>
-            <li>Spectral roll off</li>
+            <li><i>Spectral roll off</i></li>
             <p>This feature is the value of the frequency that 95% of the power of the signal resides under. As mentioned before, the power in music is concentrated in the higher frequencies; however, speech has a range of low frequency power. The mathematical expression for finding this value of frequency is as follows [65, 109]:
               <img src="formula2.jpg" class=image height=80px width=200px>
             where X(k) is the DFT of x(t), the left hand side of the above equation is the sum of the power under the frequency value V, and the right hand side of the equation is 95% of the total signal power of the time frame.
@@ -138,7 +132,16 @@
         </p>
       </div>
     </div>
-
+    
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#method">Experiments and Results</a></li>
+    </ul>
+    <div class="tab-content description">
+      <div class="tab-pane active">
+        
+      </div>
+    </div>
+  
   </div>
 
 
