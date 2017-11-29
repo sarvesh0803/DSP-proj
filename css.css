@@ -177,3 +177,15 @@ div.title{
     display: block;
     margin: 20px auto;
 }
+.main{
+    max-width: 60%;
+}
+
+.row img{
+    display: block;
+    max-width: 90%;
+}
+.row h5{
+    text-align: center;
+    font-weight: bold;
+}

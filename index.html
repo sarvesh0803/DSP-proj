@@ -62,7 +62,7 @@
         After extracting various features, we are left with using Machine learning classifiers. In addition to traditional K-Means, Spherical clustering and Bag-Of-Words based classification (for spectral analysis[5]), we also witnessed improved rates with usage of Hidden Markov models or a culmination of several traditional models. [6]
         </p>
         <h4>1.3 Figure</h4>
-        <img src="dsp.jpg" class="image">
+        <img src="dsp.jpg" class="image main">
         
       </div>
     </div>
@@ -104,10 +104,9 @@
         </p>
         <h4><b>3.4 Windowing</b></h4>
         <p>After slicing the signal into frames, we apply a window function such as the Hamming window to each frame. A Hamming window has the following form:
-        w[n]=0.54−0.46cos(2πnN−1)
-          <img src="hamming_window.jpg" class=image height=500px width=600px>
+        w[n]=0.54−0.46cos(2πn/(N−1))
         where, 0≤n≤N−1, N is the window length. Plotting the previous equation yields the following plot:
-
+    	<img src="hamming_window.jpg" class=image height=500px width=600px>
         There are several reasons why we need to apply a window function to the frames, notably to counteract the assumption made by the FFT that the data is infinite and to reduce spectral leakage.</p>
         <h4><b>3.5 Extraction of features</b></h4>
         <p>
@@ -167,9 +166,43 @@ accuracy among machine learning algorithms.</p>
             <h5>Spectral Centroid:</h5>
             <p><img src="Spectral_centroid.png"></p>
           </div>
+      	  <div class="col-sm-6">
+            <h5>Spectral Roll-off:</h5>
+            <p><img src="roll-off.png"></p>
+          </div>
         </div>
       </div>
     </div>
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#method">5. Conclusions</a></li>
+    </ul>
+    <div class="tab-content description">
+    	<div class="tab-pane active">
+    		<h4><b>5.1 Summary</b></h4>
+    		<p></p>
+    		<h4><b>5.2 Future Extensions</b></h4>
+    		<p>While we have classified restricted number of genres from a given dataset. We can use additional improved features like Local Binary Patterns and octave based spectral features to improve genre accuracy and also detect more genres.</p><p>After improving at features level we can also use improved classifiers. We can use traditional CNN based neural networks to train and classify at improved accuracy. We can also achieve this by culminating existing classifiers.</p><p>Once a higher accuracy is achieved and all standard accepted genres are detected at commendable accuracy we can use to real life projects. Genre classification has a lot of scope in industry and also at consumer end.</p><p>It can used to tag and classify millions of songs across streaming services and databases like MusixMatch & Spotify. Consumer can also benefit from this when Machine learning algorithms can incorporate this genre classification and further methods to improve recommendations of songs across various services.</p>
+    		<p>We can also try classifying geographical based genres (like Indian classical, bollywood, world music) into much conventional genres (rock, jazz etc) to standardise genres across all platforms and improve recommendations.</p><p>We can incorporate this to detect genres of songs even at live performances and band performances with suitable modifications by improving reception to ambient noise.</p><p>These are various ways how we can extend this project into more accurate and into consumer helpful projects.</p>    		
+    	</div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#method">5. References</a></li>
+    </ul>
+    <div class="tab-content description">
+    	<div class="tab-pane active">
+    		<ol>
+    			<li><a href="http://ismir2001.ismir.net/pdf/tzanetakis.pdf">http://ismir2001.ismir.net/pdf/tzanetakis.pdf</a></li>
+    			<li><a href="https://cse.iitk.ac.in/users/cs365/2015/_submissions/archit/report.pdf">https://cse.iitk.ac.in/users/cs365/2015/_submissions/archit/report.pdf</a></li>
+    			<li><a href="http://www.sciencedirect.com/science/article/pii/S0165168412001478?via%3Dihub">http://www.sciencedirect.com/science/article/pii/S0165168412001478?via%3Dihub – Local Binary Pattern</a></li>
+    			<li><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4895319&tag=1">http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4895319&tag=1 – Mel-Frequency Cepstral Coefficients</a></li>
+    			<li><a href="http://ieeexplore.ieee.org/document/7458322/">http://ieeexplore.ieee.org/document/7458322/ - Bag of words</a></li>
+    			<li><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1394661">http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1394661 – HMM</a></li>
+    		</ol>
+    	</div>
+    </div>
+
   
   </div>
 
