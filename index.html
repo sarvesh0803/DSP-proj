@@ -45,7 +45,10 @@
     <div class="tab-content description">
       <div id="#introduction" class="tab-pane active">
         <h5>Music genre classification has been of interest for a variety of reasons, including management of large music collections. As these collections are becoming more digital, genre classification is essential for creating
-        recommendation systems, that can benefit collective music libraries, social networks, etc.</h5><h5>The term “genre" is subject to interpretation and it is often the case that genres may be very fuzzy in their definition. While traditionally some genres are classified based on the sound and other related features, there are several music genres, which are widely accepted, which are classified on basis of region, time period, etc. Despite the lack of a standard criteria for defining genres, the classification of music based on genres is one of the broadest and most widely used.</h5><h5>Genre classification, till now, had been done manually by appending it to metadata of audio files or including it in album info. Our project however aims at content-based classification, focusing on information within the audio rather than extraneously appended information. The traditional machine learning approach for classification is used - and suitable features of data, train classier on feature data, make predictions.
+        recommendation systems, that can benefit collective music libraries, social networks, etc.</h5><h5>The term “genre" is a subject to interpretation and it is often the case that genres may be very fuzzy in their definition. While traditionally some genres are classified based on the sound and other related features, there are several music genres, which are widely accepted, which are classified on basis of region, time period, etc. Despite the lack of a standard criteria for defining genres, the classification of music based on genres is one of the broadest and most widely used.</h5><h5>Genre classification, till now, had been done manually by appending it to metadata of audio files or including it in album info. Our project however aims at content-based classification, focusing on information within the audio rather than extraneously appended information.The traditional machine
+learning approach for classification is used - and suitable features of data, train
+classier on feature data, make predictions.
+
         </h5><br>
         <h4>1.1 Introduction to Problem</h4>
         <p>In our project, we aim to classify music based on its genre using feature extraction followed by machine learning classifiers. Our main focus is to study and analyse how different categories of audio signals consist of varying information in both the time and the frequency domain and thus exploit them to build features for accurate classification.
@@ -180,7 +183,11 @@ accuracy among machine learning algorithms.</p>
     <div class="tab-content description">
     	<div class="tab-pane active">
     		<h4><b>5.1 Summary</b></h4>
-    		<p></p>
+    		<p>Summarising our work, we learned how to deal with the real life challenges that we face while playing with the digital audio.
+          Our main focus was to examine how different genrical audios differ in their spectral contents. So, we extracted the basic relevant spectral features for different audios and compared the differences first analysing manually and then feeding the data into the machine learning classifier.
+          In the end the features extracted were fast fourier transform, power spectral density, spectral centroid and spectral roll off.
+          
+            </p>
     		<h4><b>5.2 Future Extensions</b></h4>
     		<p>While we have classified restricted number of genres from a given dataset. We can use additional improved features like Local Binary Patterns and octave based spectral features to improve genre accuracy and also detect more genres.</p><p>After improving at features level we can also use improved classifiers. We can use traditional CNN based neural networks to train and classify at improved accuracy. We can also achieve this by culminating existing classifiers.</p><p>Once a higher accuracy is achieved and all standard accepted genres are detected at commendable accuracy we can use to real life projects. Genre classification has a lot of scope in industry and also at consumer end.</p><p>It can used to tag and classify millions of songs across streaming services and databases like MusixMatch & Spotify. Consumer can also benefit from this when Machine learning algorithms can incorporate this genre classification and further methods to improve recommendations of songs across various services.</p>
     		<p>We can also try classifying geographical based genres (like Indian classical, bollywood, world music) into much conventional genres (rock, jazz etc) to standardise genres across all platforms and improve recommendations.</p><p>We can incorporate this to detect genres of songs even at live performances and band performances with suitable modifications by improving reception to ambient noise.</p><p>These are various ways how we can extend this project into more accurate and into consumer helpful projects.</p>    		
@@ -188,7 +195,7 @@ accuracy among machine learning algorithms.</p>
     </div>
 
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#method">6. References</a></li>
+      <li class="active"><a data-toggle="tab" href="#method">5. References</a></li>
     </ul>
     <div class="tab-content description">
     	<div class="tab-pane active">
