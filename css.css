@@ -189,3 +189,21 @@ div.title{
     text-align: center;
     font-weight: bold;
 }
+.nav-pills > li {
+    float:none;
+    display:inline-block;
+    zoom:1;
+}
+
+.nav-pills {
+    text-align:center;
+    margin-top: 20px;
+}
+.graph_title{
+    text-align: center;
+    font-weight: bold;
+}
+.col-sm-6{
+    margin-bottom: 20px;
+}
+

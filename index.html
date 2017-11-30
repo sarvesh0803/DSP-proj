@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Karla" rel="stylesheet"> 
   <!-- Bootstrap CCS library -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- 
+
   <link rel="stylesheet" type="text/css" href="css.css?v=1"> 
 
 </head>
@@ -45,10 +45,7 @@
     <div class="tab-content description">
       <div id="#introduction" class="tab-pane active">
         <h5>Music genre classification has been of interest for a variety of reasons, including management of large music collections. As these collections are becoming more digital, genre classification is essential for creating
-        recommendation systems, that can benefit collective music libraries, social networks, etc.</h5><h5>The term “genre" is a subject to interpretation and it is often the case that genres may be very fuzzy in their definition. While traditionally some genres are classified based on the sound and other related features, there are several music genres, which are widely accepted, which are classified on basis of region, time period, etc. Despite the lack of a standard criteria for defining genres, the classification of music based on genres is one of the broadest and most widely used.</h5><h5>Genre classification, till now, had been done manually by appending it to metadata of audio files or including it in album info. Our project however aims at content-based classification, focusing on information within the audio rather than extraneously appended information.The traditional machine
-learning approach for classification is used - and suitable features of data, train
-classier on feature data, make predictions.
-
+        recommendation systems, that can benefit collective music libraries, social networks, etc.</h5><h5>The term “genre" is  subject to interpretation and it is often the case that genres may be very fuzzy in their definition. While traditionally some genres are classified based on the sound and other related features, there are several music genres, which are widely accepted, which are classified on basis of region, time period, etc. Despite the lack of a standard criteria for defining genres, the classification of music based on genres is one of the broadest and most widely used.</h5><h5>Genre classification, till now, had been done manually by appending it to metadata of audio files or including it in album info. Our project however aims at content-based classification, focusing on information within the audio rather than extraneously appended information. The traditional machine learning approach for classification is used - create dataset and extract suitable features of data, train classfier on feature data, make predictions.
         </h5><br>
         <h4>1.1 Introduction to Problem</h4>
         <p>In our project, we aim to classify music based on its genre using feature extraction followed by machine learning classifiers. Our main focus is to study and analyse how different categories of audio signals consist of varying information in both the time and the frequency domain and thus exploit them to build features for accurate classification.
@@ -62,7 +59,7 @@ classier on feature data, make predictions.
         These includes usage of spectrogram to calculate features like Roll-Off point,Spectral Centroid, Kurtosis etc.
 
         Another important feature used is the Mel-Frequency Cepstral Co-Efficients.
-        After extracting various features, we are left with using Machine learning classifiers. In addition to traditional K-Means, Spherical clustering and Bag-Of-Words based classification (for spectral analysis[5]), we also witnessed improved rates with usage of Hidden Markov models or a culmination of several traditional models. [6]
+        After extracting various features, we are left with using Machine learning classifiers. In addition to traditional K-Means, Spherical clustering and Bag-Of-Words based classification (for spectral analysis [5]), we also witnessed improved rates with usage of Hidden Markov models or a culmination of several traditional models. [6]
         </p>
         <h4>1.3 Figure</h4>
         <img src="dsp.jpg" class="image main">
@@ -94,7 +91,7 @@ classier on feature data, make predictions.
     <div class="tab-content description">
       <div class="tab-pane active">
         <h4><b>3.1 Dataset description</b></h4>
-        <p>We have used the GTZAN dataset from the MARYSAS website. It contains 10 music genres, each genre has 100 audio clips in .au format. Since our project mainly focuses on the feature extraction part, we have decided to perform the experiment over 4 main genres, ie - classical, jazz, rock, metal. Each audio clip is 30 seconds long, 22050 Hz Mono 16-bit file. The dataset incorporates samples from variety of sources like CDs, radios, microphone recordings etc.
+        <p>We have used the <a href="http://marsyas.info/downloads/datasets.html">GTZAN dataset</a> from the MARYSAS website. It contains 10 music genres, each genre has 100 audio clips in .au format. Since our project mainly focuses on the feature extraction part, we have decided to perform the experiment over 4 main genres, ie - classical, jazz, rock, metal. Each audio clip is 30 seconds long, 22050 Hz Mono 16-bit file. The dataset incorporates samples from variety of sources like CDs, radios, microphone recordings etc.
         </p>
         <h4><b>3.2 Preprocessing</b></h4>
         <p>The preprocessing part involved converting the audio from .au format to .wav format to make it compatible to python's wavread module for reading audio files.
@@ -125,24 +122,79 @@ classier on feature data, make predictions.
             where k is an index corresponding to a frequency and X(k) is the power of the signal at the corresponding frequency band.
             <img src="formula1.png" class=image height=120px width=130px></p>
             <li><i>Spectral roll off</i></li>
-            <p>This feature is the value of the frequency that 95% of the power of the signal resides under. As mentioned before, the power in music is concentrated in the higher frequencies; however, speech has a range of low frequency power. The mathematical expression for finding this value of frequency is as follows [65, 109]:
-              <img src="formula2.jpg" class=image height=80px width=200px>
+            <p>This feature is the value of the frequency that 95% of the power of the signal resides under. As mentioned before, the power in music is concentrated in the higher frequencies; however, speech has a range of low frequency power. The mathematical expression for finding this value of frequency is as follows:
+             <img src="formula2.jpg" class=image height=80px width=200px>
             where X(k) is the DFT of x(t), the left hand side of the above equation is the sum of the power under the frequency value V, and the right hand side of the equation is 95% of the total signal power of the time frame.
             </p>
           </ul>
         </p>
-      <h4><b>3.6 Classification</b></h4>
-      <p>Support vector machine(SVM) and Back Propagation Neural Network(BPNN) learning algorithm has been used for the classification of genre classes of  music by  learning  from 
-training data.  Experimental  results  show  that  the  proposed audio classification scheme is very effective and the accuracy 
-rate  is  95%.  The  performance  was  compared  to  SVM  which showed  an  accuracy of 83%.Neural  network  and  SVM  has been  used  because  of  their  good  classification  and  training
-accuracy among machine learning algorithms.</p>
+	      <h4><b>3.6 Classification</b></h4>
+	      <p>Support vector machine(SVM) and Back Propagation Neural Network(BPNN) learning algorithm has been used for the classification of genre classes of  music by  learning  from training data.  Experimental  results  show  that  the  proposed audio classification scheme is very effective and the accuracy rate  is  95%.  The  performance  was  compared  to  SVM  which showed  an  accuracy of 83%.Neural  network  and  SVM  has been  used  because  of  their  good  classification  and  training accuracy among machine learning algorithms.</p>
       </div>
     </div>
     
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#method">4. Experiments and Results</a></li>
+      <li class="active"><a data-toggle="tab" href="#method">4. Code</a></li>
     </ul>
-    <div class="tab-content description container">
+    <div class="tab-content">
+	  <div id="code" class="tab-pane fade in active">
+	  	<h4>All the code used to perform all the above mentioned tasks can be found <a href="https://github.com/vijay-kartik/DSP-proj/blob/master/dsp_fft.py">here.</a></h4>
+	  </div>
+	</div>
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#method">5. Experiments and Results</a></li>
+    </ul>
+    <ul class="nav nav-pills">
+	  <li class="active"><a data-toggle="pill" href="#fft">Fast Fourier Transform</a></li>
+	  <li><a data-toggle="pill" href="#psd">Power Spectral Density</a></li>
+	  <li><a data-toggle="pill" href="#centroid">Spectral Centroid</a></li>
+	  <li><a data-toggle="pill" href="#rolloff">Spectral Roll-off</a></li>	
+	</ul>
+
+	<div class="tab-content">
+	  <div id="fft" class="tab-pane fade in active">
+	    <div class="row">
+	    	<div class="col-sm-6"><h4 class="graph_title">Classical</h4><img src="Result Images/fft-classical.png"></div>
+	    	<div class="col-sm-6"><h4 class="graph_title">Rock</h4><img src="Result Images/fft1.png"></div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-sm-6"><h4 class="graph_title">Jazz</h4><img src="Result Images/fft2.png"></div>
+	    	<div class="col-sm-6"><h4 class="graph_title">Metal</h4><img src="Result Images/fft3.png"></div>
+	    </div>
+	  </div>
+	  <div id="psd" class="tab-pane fade">
+	    <div class="row">
+	    	<div class="col-sm-6"><h4 class="graph_title">Classical</h4><img src="Result Images/psd0.png"></div>
+	    	<div class="col-sm-6"><h4 class="graph_title">Rock</h4><img src="Result Images/psd1.png"></div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-sm-6"><h4 class="graph_title">Jazz</h4><img src="Result Images/psd2.png"></div>
+	    	<div class="col-sm-6"><h4 class="graph_title">Metal</h4><img src="Result Images/psd3.png"></div>
+	    </div>
+	  </div>
+	  <div id="centroid" class="tab-pane fade">
+	    <div class="row">
+	    	<div class="col-sm-6"><h4 class="graph_title">Classical</h4><img src="Result Images/Spectral_centroid.png"></div>
+	    	<div class="col-sm-6"><h4 class="graph_title">Rock</h4><img src="Result Images/sc1.png"></div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-sm-6"><h4 class="graph_title">Jazz</h4><img src="Result Images/sc2.png"></div>
+	    	<div class="col-sm-6"><h4 class="graph_title">Metal</h4><img src="Result Images/sc3.png"></div>
+	    </div>
+	  </div>
+  	  <div id="rolloff" class="tab-pane fade">
+	    <div class="row">
+	    	<div class="col-sm-6"><p class="graph_title">Classical</p><img src="Result Images/roll-off.png"></div>
+	    	<div class="col-sm-6"><p class="graph_title">Rock</p><img src="Result Images/roll1.png"></div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-sm-6"><p class="graph_title">Jazz</p><img src="Result Images/roll2.png"></div>
+	    	<div class="col-sm-6"><p class="graph_title">Metal</p><img src="Result Images/roll3.png"></div>
+	    </div>
+	  </div>
+	</div>
+    <!-- <div class="tab-content description container">
       <div class="tab-pane active">
         <div class="row">
           <div class="col-sm-6">
@@ -174,28 +226,37 @@ accuracy among machine learning algorithms.</p>
             <p><img src="roll-off.png"></p>
           </div>
         </div>
-      </div>
-    </div>
-
+      </div> -->
+      
+      	
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#method">5. Conclusions</a></li>
+      <li class="active"><a data-toggle="tab" href="#method">6. Conclusions</a></li>
     </ul>
     <div class="tab-content description">
     	<div class="tab-pane active">
-    		<h4><b>5.1 Summary</b></h4>
-    		<p>Summarising our work, we learned how to deal with the real life challenges that we face while playing with the digital audio.
-          Our main focus was to examine how different genrical audios differ in their spectral contents. So, we extracted the basic relevant spectral features for different audios and compared the differences first analysing manually and then feeding the data into the machine learning classifier.
-          In the end the features extracted were fast fourier transform, power spectral density, spectral centroid and spectral roll off.
-          
-            </p>
-    		<h4><b>5.2 Future Extensions</b></h4>
+    		<h4><b>6.1 Analysis</b></h4>    
+
+	      	<h5><b>Fast Fourier Transform &amp; Power Spectral Density:</b></h5>
+	      	<p>Looking at FFT &amp; PSD, we can observe the presence of highest magnitude component at extreme frequencies in classical and jazz, where as in rock and metal it’s in midrange frequencies. The magnitude of jazz is surprisingly low at almost 1/10th of magnitude of other genres. The midrange frequencies have higher magnitude in rock (which is evident of having more energy as compared to songs of all other genres).</p>
+
+			<h5><b>Spectral Roll-off:</b></h5>
+			<p>We can observe that roll off of classical tends to remain constant over certain frequency ranges throughout the spectrum.This proves that classical music has a gradual change in the intensity over time. On the other hand, metal tends to fluctuate very rapidly which is evident of its frequent increase and decrease of the musical notes. On comparing rock and jazz, we observe that rock has several impulses across the spectrum against the limited number of impulse in jazz.</p>
+
+
+			<h5><b>Spectral Centroid:</b></h5>
+			<p>Spectral centroid of jazz clearly depicts the frequency components are concentrated around the central frequency resulting in high values. Spectral centroid of rock has higher magnitudes at low frequencies and that of Metal has lower magnitudes at high frequencies. Spectral centroid of classical is unevenly spread across the spectrum with irregular patterns and impulses at various frequencies.</p>
+
+			<h4><b>6.2 Summary</b></h4>
+			<p>Summarising our work, we learned how to deal with the real life challenges that we face while playing with the digital audio. Our main focus was to examine how different genrical audios differ in their spectral contents. So, we extracted the basic relevant spectral features for different audios and compared the differences first analysing manually and then feeding the data into the machine learning classifier. In the end the features extracted were fast fourier transform, power spectral density, spectral centroid and spectral roll off.</p>
+    
+    		<h4><b>6.3 Future Extensions</b></h4>
     		<p>While we have classified restricted number of genres from a given dataset. We can use additional improved features like Local Binary Patterns and octave based spectral features to improve genre accuracy and also detect more genres.</p><p>After improving at features level we can also use improved classifiers. We can use traditional CNN based neural networks to train and classify at improved accuracy. We can also achieve this by culminating existing classifiers.</p><p>Once a higher accuracy is achieved and all standard accepted genres are detected at commendable accuracy we can use to real life projects. Genre classification has a lot of scope in industry and also at consumer end.</p><p>It can used to tag and classify millions of songs across streaming services and databases like MusixMatch & Spotify. Consumer can also benefit from this when Machine learning algorithms can incorporate this genre classification and further methods to improve recommendations of songs across various services.</p>
     		<p>We can also try classifying geographical based genres (like Indian classical, bollywood, world music) into much conventional genres (rock, jazz etc) to standardise genres across all platforms and improve recommendations.</p><p>We can incorporate this to detect genres of songs even at live performances and band performances with suitable modifications by improving reception to ambient noise.</p><p>These are various ways how we can extend this project into more accurate and into consumer helpful projects.</p>    		
     	</div>
     </div>
 
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#method">5. References</a></li>
+      <li class="active"><a data-toggle="tab" href="#method">7. References</a></li>
     </ul>
     <div class="tab-content description">
     	<div class="tab-pane active">
@@ -216,6 +277,8 @@ accuracy among machine learning algorithms.</p>
 
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   <script>
     $(document).ready(function(){  
     $('[data-toggle="popover"]').popover(); 
@@ -224,9 +287,8 @@ accuracy among machine learning algorithms.</p>
     jQuery(window).on('load',function() {
         // will fade out the loading animation
     jQuery("#preloader").delay(1000).fadeOut("slow");
-    })
+    });
   </script>
-
 
 </body>
 </html>
